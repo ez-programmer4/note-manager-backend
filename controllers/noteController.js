@@ -146,7 +146,7 @@ exports.shareNote = async (req, res) => {
 // Toggle favorite status of a note
 exports.toggleFavorite = async (req, res) => {
   const { id } = req.params;
-  console.log(`Toggling favorite for note ID: ${id}`); // Debug log
+  console.log(`Toggling favorite for note ID id an di : ${id}`); // Debug log
 
   try {
     console.log(`Attempting to find note with ID: ${id}`);
