@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 // Update the allowedOrigins to include the correct protocol and port
-const allowedOrigins = ["http://localhost:3000"]; // Corrected to use http and the correct port
+const allowedOrigins = ["https://note-manager1.onrender.com"]; // Corrected to use http and the correct port
 
 // CORS configuration
 app.use(
