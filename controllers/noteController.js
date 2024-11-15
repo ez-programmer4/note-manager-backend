@@ -149,18 +149,15 @@ exports.toggleFavorite = async (req, res) => {
   console.log(`Toggling favorite for note ID id an di : ${id}`); // Debug log
 
   try {
-    console.log(`Attempting to find note with ID: ${id}`);
     const note = await Note.findById(id);
 
     if (!note) {
-      console.log("Note not found."); // Debug log
       return res.status(404).json({ message: "Note not found." });
     }
 
     note.favorite = !note.favorite;
     await note.save();
 
-    console.log(`Note updated: ${note}`); // Debug log
     res.status(200).json(note);
   } catch (err) {
     console.error("Error toggling favorite status:", err);
