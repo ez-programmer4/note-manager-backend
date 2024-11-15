@@ -140,8 +140,6 @@ exports.shareNote = async (req, res) => {
       .json({ message: "Error sharing note.", error: err.message }); // Include error message for debugging
   }
 };
-// Toggle favorite status of a note
-// In your noteController.js
 
 // Toggle favorite status of a note
 exports.toggleFavorite = async (req, res) => {
