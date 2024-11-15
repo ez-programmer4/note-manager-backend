@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const userRoutes = require("./routes/useRoutes"); // Corrected to userRoutes
+const userRoutes = require("./routes/userRoutes"); // Corrected to userRoutes
 const noteRoutes = require("./routes/noteRoutes");
 const dotenv = require("dotenv");
 
@@ -27,6 +27,12 @@ app.use(express.json()); // Middleware to parse JSON requests
 // Use routes
 app.use("/api/users", userRoutes);
 app.use("/api/notes", noteRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
