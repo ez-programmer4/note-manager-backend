@@ -6,7 +6,7 @@ const {
   updateNote,
   deleteNote,
   shareNote,
-  toggleFavorite, // Import the toggleFavorite function
+  toggleFavorite,
 } = require("../controllers/noteController");
 const { authenticate } = require("../middleware/auth");
 const router = express.Router();
